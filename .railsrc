@@ -1,0 +1,1 @@
+-d mysql -T -B --skip-turbolinks #すべてのオプションは rails new -h で確認できる
