@@ -1,4 +1,7 @@
-#環境変数
+#######################################
+# environment variable
+#######################################
+
 export LANG=ja_JP.UTF-8
 
 export PATH=$PATH:/bin
@@ -9,12 +12,13 @@ export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/sbin
 
 #補完機能を有効にする
-autoload  -Uz compinit
-compinit
+autoload  -Uz compinit && compinit
 
-#プロンプトの設定
-autoload -Uz colors
-colors
+#######################################
+# prompt
+#######################################
+
+autoload -Uz colors && colors
 PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})[%n@%m]%{${reset_color}%}[%~] %# "
 #vcs_infoを右に表示
 autoload -Uz add-zsh-hook
@@ -34,40 +38,42 @@ function _update_vcs_info_msg() {
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
-#大文字と小文字を区別しない
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' #大文字と小文字を区別しない
+zstyle ':completion:*:default' menu select=2 #補完候補をウロウロ選ぶ
 
-#補完候補をウロウロ選ぶ
-zstyle ':completion:*:default' menu select=2
+#######################################
+# option
+#######################################
 
-#ディレクトリ移動
-setopt auto_cd
+setopt auto_cd              # ディレクトリ移動
+setopt auto_pushd           # cdしたら自動的にpushhdする
+setopt pushd_ignore_dups    # 重複したディレクトリを追加しない
+setopt print_eight_bit      # 日本語ファイル名を表示可能にする
+setopt no_beep              # beepを無効にする
+setopt no_flow_control      # フローコントロールを無効にする
+setopt ignore_eof           # Ctrl+Dでzshを終了しない
+setopt interactive_comments # '#'以降をコメントとして扱う
 
-#cdしたら自動的にpushhdする
-setopt auto_pushd
+#######################################
+# history setting
+#######################################
 
-#重複したディレクトリを追加しない
-setopt pushd_ignore_dups
+HISTFILE=~/.zsh_history
+HISTORY_IGNORE="(ls|ll|pwd)"
+HISTSIZE=1000000
+SAVEHIST=1000000
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>' #単語の区切りとみなさない文字
 
-#日本語ファイル名を表示可能にする
-setopt print_eight_bit
+setopt HIST_FIND_NO_DUPS    # 履歴検索中、(連続してなくとも)重複を飛ばす
+setopt HIST_IGNORE_ALL_DUPS # 履歴中の重複行をファイル記録前に無くす
+setopt HIST_IGNORE_DUPS     # 前と重複する行は記録しない
+setopt HIST_IGNORE_SPACE    # 行頭がスペースのコマンドは記録しない
+setopt HIST_NO_STORE        # histroyコマンドは記録しない
+setopt HIST_REDUCE_BLANKS   # 余分な空白は詰めて記録
 
-#beepを無効にする
-setopt no_beep
-
-#フローコントロールを無効にする
-setopt no_flow_control
-
-#Ctrl+Dでzshを終了しない
-setopt ignore_eof
-
-# '#'移行をコメントとして扱う
-setopt interactive_comments
-
-#beepを無効にする
-setopt no_beep
-
-#エイリアス
+#######################################
+# alias
+#######################################
 
 alias vi=vim
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
@@ -76,8 +82,6 @@ alias view=/Applications/MacVim.app/Contents/MacOS/view
 
 alias la='ls -aF'
 alias ll='ls -alF'
-alias -g L='| less'
-alias -g G='| grep'
 alias be='bundle exec '
 
 alias history='history -iD -100'
@@ -86,29 +90,10 @@ alias history='history -iD -100'
 alias -g L='| less'
 alias -g G='| ag'
 
-#history設定
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
-HISTORY_IGNORE="(ls|ll|pwd)"
+#######################################
+# rbenv
+#######################################
 
-#単語の区切りとみなさない文字 default='*?_-.[]~=/&;!#$%^(){}<>'
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
-# 前と重複する行は記録しない
-setopt HIST_IGNORE_DUPS
-# 履歴中の重複行をファイル記録前に無くす
-setopt HIST_IGNORE_ALL_DUPS
-# 行頭がスペースのコマンドは記録しない
-setopt HIST_IGNORE_SPACE
-# 履歴検索中、(連続してなくとも)重複を飛ばす
-setopt HIST_FIND_NO_DUPS
-# 余分な空白は詰めて記録
-setopt HIST_REDUCE_BLANKS
-# histroyコマンドは記録しない
-setopt HIST_NO_STORE
-
-#rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 function gem(){
   $HOME/.rbenv/shims/gem $*
@@ -126,22 +111,17 @@ function bundle(){
   fi
 }
 
-
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-#zsh-completionsの追加
-fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
-
-
 #######################################
 # go path
-########################################
+#######################################
+
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
-########################################
+#######################################
 ## peco hitory
-########################################
+#######################################
+
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
 function peco-select-history() {
