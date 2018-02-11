@@ -89,6 +89,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+#単語の区切りとみなさない文字 default='*?_-.[]~=/&;!#$%^(){}<>'
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
 # 前と重複する行は記録しない
 setopt HIST_IGNORE_DUPS
 # 履歴中の重複行をファイル記録前に無くす
