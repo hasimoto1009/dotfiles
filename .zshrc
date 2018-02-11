@@ -90,6 +90,7 @@ alias -g G='| ag'
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+HISTORY_IGNORE="(ls|ll|pwd)"
 
 #単語の区切りとみなさない文字 default='*?_-.[]~=/&;!#$%^(){}<>'
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
