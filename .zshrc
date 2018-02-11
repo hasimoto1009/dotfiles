@@ -18,6 +18,13 @@ export PATH=$PATH:/usr/sbin
 autoload  -Uz compinit && compinit           # 補完機能を有効にする
 zstyle ':completion:*:default' menu select=2 # 補完候補をウロウロ選ぶ
 
+if [ -f ~/.zsh/zsh-autosuggestions.zsh ]; then
+  source ~/.zsh/zsh-autosuggestions.zsh
+fi
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=022'
+ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
+
 #######################################
 # prompt
 #######################################
