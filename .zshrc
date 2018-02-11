@@ -11,36 +11,25 @@ export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/sbin
 
-#補完機能を有効にする
-autoload  -Uz compinit && compinit
+#######################################
+# completion
+#######################################
+
+autoload  -Uz compinit && compinit           # 補完機能を有効にする
+zstyle ':completion:*:default' menu select=2 # 補完候補をウロウロ選ぶ
 
 #######################################
 # prompt
 #######################################
 
 autoload -Uz colors && colors
-PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})[%n@%m]%{${reset_color}%}[%~] %# "
-#vcs_infoを右に表示
 autoload -Uz add-zsh-hook
 autoload -Uz vcs_info
 
-zstyle ':vcs_info:*' formats '%F{green}(%s)[%b]%f'
-zstyle ':vcs_info:*' actionformats '%F{red}(%s)[%b|%a]%f'
-zstyle ':vcs_info:git:*' check-for-change true
-zstyle ':vcs_info:git:*' stagedstr "+"
-zstyle ':vcs_info:git:*' unstagedstr "-"
-zstyle ':vcs_info:git:*' formats '(%s)-[%b] %c%u'
-zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
+if [ -f ~/.zsh/my_prompt.zsh ]; then
+  source ~/.zsh/my_prompt.zsh
+fi
 
-function _update_vcs_info_msg() {
-  LANG=en_US.UTF-8 vcs_info
-  RPROMPT="${vcs_info_msg_0_}"
-}
-add-zsh-hook precmd _update_vcs_info_msg
-
-zstyle ':completion:*:default' menu select=2 #補完候補をウロウロ選ぶ
-
-REPORTTIME=1 ## 実行時間1秒以上のとき、消費時間の統計情報を表示
 
 #######################################
 # option
@@ -54,6 +43,8 @@ setopt no_beep              # beepを無効にする
 setopt no_flow_control      # フローコントロールを無効にする
 setopt ignore_eof           # Ctrl+Dでzshを終了しない
 setopt interactive_comments # '#'以降をコメントとして扱う
+
+REPORTTIME=1                                 # 実行時間1秒以上のとき、消費時間の統計情報を表示
 
 #######################################
 # history setting
