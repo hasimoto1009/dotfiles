@@ -40,6 +40,8 @@ add-zsh-hook precmd _update_vcs_info_msg
 
 zstyle ':completion:*:default' menu select=2 #補完候補をウロウロ選ぶ
 
+REPORTTIME=1 ## 実行時間1秒以上のとき、消費時間の統計情報を表示
+
 #######################################
 # option
 #######################################
