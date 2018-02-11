@@ -159,3 +159,8 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+# zshの起動時間を計測するときに使う
+#if (which zprof > /dev/null) ;then
+#  zprof | cat
+#fi
