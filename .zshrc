@@ -38,7 +38,6 @@ function _update_vcs_info_msg() {
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' #大文字と小文字を区別しない
 zstyle ':completion:*:default' menu select=2 #補完候補をウロウロ選ぶ
 
 #######################################
