@@ -18,6 +18,8 @@ export PATH=$PATH:/usr/sbin
 autoload  -Uz compinit && compinit           # 補完機能を有効にする
 zstyle ':completion:*:default' menu select=2 # 補完候補をウロウロ選ぶ
 
+fpath=(~/.zsh/src $fpath)
+
 if [ -f ~/.zsh/zsh-autosuggestions.zsh ]; then
   source ~/.zsh/zsh-autosuggestions.zsh
 fi
@@ -36,7 +38,6 @@ autoload -Uz vcs_info
 if [ -f ~/.zsh/my_prompt.zsh ]; then
   source ~/.zsh/my_prompt.zsh
 fi
-
 
 #######################################
 # option
