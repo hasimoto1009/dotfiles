@@ -80,6 +80,8 @@ alias -g L='| less'
 alias -g G='| grep'
 alias be='bundle exec '
 
+alias history='history -iD -100'
+
 #グローバルエイリアス
 alias -g L='| less'
 alias -g G='| ag'
