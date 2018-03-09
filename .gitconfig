@@ -4,6 +4,7 @@
 [alias]
         amend     = commit --amend
         branches  = branch -a
+        delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
         discard   = checkout --
         graph     = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
         l         = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
