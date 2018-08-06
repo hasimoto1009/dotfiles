@@ -82,13 +82,14 @@ alias view=/Applications/MacVim.app/Contents/MacOS/view
 
 alias la='ls -aF'
 alias ll='ls -alF'
+alias grep='jvgrep'
 alias be='bundle exec '
 
 alias history='history -iD -100'
 
 #グローバルエイリアス
 alias -g L='| less'
-alias -g G='| ag'
+alias -g G='| jvgrep'
 
 #######################################
 # rbenv
