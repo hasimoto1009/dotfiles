@@ -6,15 +6,15 @@ if &compatible
   set nocompatible
 endif
 " Required:
-set runtimepath+=/Users/hashimoto/.vim/dein//repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/dein//repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/hashimoto/.vim/dein/')
-  call dein#begin('/Users/hashimoto/.vim/dein/')
+if dein#load_state('~/.vim/dein/')
+  call dein#begin('~/.vim/dein/')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/hashimoto/.vim/dein//repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
@@ -29,42 +29,8 @@ if dein#load_state('/Users/hashimoto/.vim/dein/')
   call dein#save_state()
 endif
 
-
 filetype plugin indent on
 syntax enable
-
-"vim plug setting
-"init setting
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-"if has('vim_starting')
-"  set rtp+=~/.vim/plugged/vim-plug
-"  if !isdirectory(expand('~/.vim/plugged/vim-plug'))
-"    echo 'install vim-plug...'
-"    call system('mkdir -p ~/.vim/plugged/vim-plug')
-"    call system('mkdir -p ~/.vim/undo')
-"    call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
-"  end
-"endif
-"
-"call plug#begin('~/.vim/plugged')
-"	Plug 'junegunn/vim-plug',  {'dir': '~/.vim/plugged/vim-plug/autoload'}
-"	Plug 'Shougo/vimproc.vim'
-"	Plug 'Shougo/unite.vim'
-"	Plug 'scrooloose/nerdcommenter'
-"	Plug 'open-browser.vim'
-"	Plug 'junegunn/vim-easy-align'
-"	Plug 'Shougo/neocomplete'
-"	Plug 'bronson/vim-trailing-whitespace'
-"	Plug 'rking/ag.vim'
-"	Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-"
-"	"filetype
-"	Plug 'evanmiller/nginx-vim-syntax'
-"
-"	"theme
-"	Plug 'altercation/vim-colors-solarized'
-"call plug#end()
 
 filetype plugin on
 "ファイル名と内容によてファイルタイプを判別し、ファイルタイププラグインを有効にする
