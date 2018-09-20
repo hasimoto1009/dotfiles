@@ -10,7 +10,7 @@ set runtimepath+=~/.vim/dein//repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('~/.vim/dein/')
-  call dein#begin('~/.vim/dein/')
+  call dein#begin( '~/.vim/dein/')
 
   " Let dein manage dein
   " Required:
@@ -110,13 +110,13 @@ nmap ,, <Plug>NERDCommenterToggle
 vmap ,, <Plug>NERDCommenterToggle
 
 
-set grepprg=jvgrep
+set grepprg=rg
 " grep検索のショートカット
 nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
-" unite grepにjvgrepを使う
-if executable('jvgrep')
-    let g:unite_source_grep_command = 'jvgrep'
+" unite grepにrgを使う
+if executable('rg')
+    let g:unite_source_grep_command = 'rg'
     let g:unite_source_grep_default_opts = '-r'
     let g:unite_source_grep_recursive_opt = '-R'
 endif
@@ -174,7 +174,17 @@ nmap + :Ag <c-r>=expand("<cword>")<cr><cr>
 nnoremap <space>/ :Ag 
 
 " go get github.com/mattn/files
-nnoremap ,, :<c-u>CtrlPMRUFiles<cr> " ctrlPの起動
+nnoremap ,, :<c-u>CtrlPMRUFiles<cr> " ctrlpの起動
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' " ctrlp cache dir
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_root_markers = ['Gemfile', 'pom.xml', 'build.xml']
+let g:ctrlp_lazy_update = 1 " 遅延再描画
+let g:ctrlp_max_height = 20 
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " unite setting
 let g:unite_source_history_yank_enable = 1
@@ -187,3 +197,4 @@ endtry
 nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
 " reset not it is <C-l> normally
 :nnoremap <space>r <Plug>(unite_restart)
+
