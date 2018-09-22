@@ -75,10 +75,10 @@ setopt HIST_REDUCE_BLANKS   # 余分な空白は詰めて記録
 # alias
 #######################################
 
-alias vi=vim
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
-alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
-alias view=/Applications/MacVim.app/Contents/MacOS/view
+#alias vi=vim
+#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
+#alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
+#alias view=/Applications/MacVim.app/Contents/MacOS/view
 
 alias la='ls -aF'
 alias ll='ls -alF'
