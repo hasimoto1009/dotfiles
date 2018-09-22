@@ -41,6 +41,12 @@ syntax enable "色付けをオン
 au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 let g:ruby_path = "" "補完できなくなりますがかなり高速になる
 
+" ファイルを開いた時、バッファを切替時、 最後にカーソルがあった場所に移動する
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
+
 "Color Schema
 colorscheme solarized
 set background=dark
