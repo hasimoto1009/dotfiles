@@ -69,6 +69,8 @@ set ttyfast "スクロールが遅い問題の解決
 set nf="" "<C-a>などの数値増減時に８進数を抜く
 set synmaxcol=200 "一行が200文字以上の場合は解析をしないようにする
 
+set hidden "ファイル編集中でもバッファを切り替えられるようにする
+
 set scrolloff=3 "3行余裕を持たせてスクロールする
 set showmatch " 対応括弧をハイライト表示する
 set matchtime=3 " 対応括弧の表示秒数を3秒にする
@@ -158,6 +160,8 @@ nnoremap <silent> <Space>rv :<C-u>source $MYVIMRC \| if has('gui_running') \| so
 "easy align setting
 vnoremap <silent> <Enter> :EasyAlign<cr>
 
+nnoremap <silent> <C-j> :bprev<CR> "1つ前のバッファに切り替え
+nnoremap <silent> <C-k> :bnext<CR> "1つ後のバッファに切り替え
 
 "ag setting
 " --- type ° to search the word in all files in the current dir
