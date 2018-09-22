@@ -84,6 +84,7 @@ alias la='ls -aF'
 alias ll='ls -alF'
 alias grep='jvgrep'
 alias be='bundle exec '
+alias less='less -Qr'
 
 alias history='history -iD -100'
 
