@@ -48,7 +48,7 @@ augroup vimrcEx
 augroup END
 
 "Color Schema
-colorscheme solarized
+"colorscheme solarized
 set background=dark
 let g:solarized_termcolors=256
 
@@ -68,8 +68,8 @@ set lazyredraw "マクロなどの途中経過を描写しない
 set ttyfast "スクロールが遅い問題の解決
 set nf="" "<C-a>などの数値増減時に８進数を抜く
 set synmaxcol=200 "一行が200文字以上の場合は解析をしないようにする
-"2016/03/23に追加
-set scrolloff=3
+
+set scrolloff=3 "3行余裕を持たせてスクロールする
 set showmatch " 対応括弧をハイライト表示する
 set matchtime=3 " 対応括弧の表示秒数を3秒にする
 set wrap " ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
