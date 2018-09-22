@@ -26,6 +26,7 @@
         excludesfile = /Users/hashimoto/.gitignore_global
         autocrlf = input
         quotepath = false
+	pager = LESSCHARSET=utf-8 less
 [filter "hawser"]
         clean = git hawser clean %f
         smudge = git hawser smudge %f
