@@ -18,9 +18,9 @@ if [ ! -d $1 ]; then
 fi
 }
 
-create_dir .vim/undo
-create_dir .vim/swap
-create_dir .vim/backup
+create_dir ~/.vim/undo
+create_dir ~/.vim/swap
+create_dir ~/.vim/backup
 
 # dein.vim install
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh && sh ./installer.sh ~/.vim/dein
