@@ -20,6 +20,10 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('junegunn/vim-easy-align')
+  call dein#add('tpope/vim-endwise')
+  " call dein#add('Shougo/neocomplete.vim', { 'on_i': 1 }) " insert mode時に有効化
+  " call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
+
 
   " You can specify revision/branch/tag.
   "call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
@@ -53,7 +57,7 @@ set background=dark
 let g:solarized_termcolors=256
 
 set number "行番号表示
-set paste "paste mode indentそのままで貼り付ける
+"set paste "paste mode indentそのままで貼り付ける
 set clipboard=unnamed "OSのクリップボードと共有
 set tabstop=2
 set shiftwidth=2
