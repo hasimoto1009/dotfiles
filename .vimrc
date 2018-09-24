@@ -21,6 +21,7 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('junegunn/vim-easy-align')
   call dein#add('tpope/vim-endwise')
+  call dein#add('ctrlpvim/ctrlp.vim')
   " call dein#add('Shougo/neocomplete.vim', { 'on_i': 1 }) " insert mode時に有効化
   " call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
 
@@ -172,6 +173,8 @@ nnoremap <silent> <C-k> :bnext<CR> "1つ後のバッファに切り替え
 nmap + :Ag <c-r>=expand("<cword>")<cr><cr>
 nnoremap <space>/ :Ag 
 
+" go get github.com/mattn/files
+nnoremap ,, :<c-u>CtrlPMRUFiles<cr> " ctrlPの起動
 
 " unite setting
 let g:unite_source_history_yank_enable = 1
