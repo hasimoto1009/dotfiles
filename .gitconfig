@@ -1,6 +1,3 @@
-[user]
-	name = hasimoto1009
-	email = hasimoto1009@gmail.com
 [alias]
         amend     = commit --amend
         branches  = branch -a
