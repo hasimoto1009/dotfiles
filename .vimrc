@@ -37,9 +37,6 @@ if dein#load_state('~/.vim/dein/')
   call dein#save_state()
 endif
 
-filetype plugin indent on
-syntax enable
-
 filetype plugin on
 "ファイル名と内容によてファイルタイプを判別し、ファイルタイププラグインを有効にする
 filetype plugin indent on
