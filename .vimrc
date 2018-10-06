@@ -27,6 +27,9 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('vim-scripts/vim-airline')
   " call dein#add('Shougo/neocomplete.vim', { 'on_i': 1 }) " insert mode時に有効化
   " call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
+  if has('job') && has('channel') && has('timers')
+    call dein#add('w0rp/ale') "非同期lint
+  endif
 
 
   " You can specify revision/branch/tag.
