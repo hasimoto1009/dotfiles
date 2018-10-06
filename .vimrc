@@ -24,6 +24,7 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('joker1007/vim-ruby-heredoc-syntax')
   call dein#add('mattn/benchvimrc-vim')
+  call dein#add('vim-scripts/vim-airline')
   " call dein#add('Shougo/neocomplete.vim', { 'on_i': 1 }) " insert mode時に有効化
   " call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
 
@@ -191,3 +192,4 @@ endtry
 nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
 " reset not it is <C-l> normally
 :nnoremap <space>r <Plug>(unite_restart)
+
