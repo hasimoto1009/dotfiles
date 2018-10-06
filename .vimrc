@@ -23,6 +23,7 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('tpope/vim-endwise')
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('joker1007/vim-ruby-heredoc-syntax')
+  call dein#add('mattn/benchvimrc-vim')
   " call dein#add('Shougo/neocomplete.vim', { 'on_i': 1 }) " insert mode時に有効化
   " call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
 
