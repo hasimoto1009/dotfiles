@@ -80,12 +80,15 @@ setopt HIST_REDUCE_BLANKS   # 余分な空白は詰めて記録
 #alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
 #alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
 #alias view=/Applications/MacVim.app/Contents/MacOS/view
+alias v=vim
+alias g=git
 
 alias la='ls -aF'
 alias ll='ls -alF'
-alias grep='jvgrep'
+alias grep='rg'
 alias be='bundle exec '
 alias less='less -Qr'
+alias dc_rspec='docker-compose -f docker/development/docker-compose.yml exec -e RAILS_ENV=test app rspec'
 
 alias history='history -iD -100'
 
