@@ -21,7 +21,7 @@
         unstage   = reset -q HEAD --
 [core]
 	editor = vim -c \"set fenc=utf-8\"
-        excludesfile = /Users/hashimoto/.gitignore_global
+        excludesfile = ~/.gitignore_global
         autocrlf = input
         quotepath = false
 	pager = LESSCHARSET=utf-8 less
