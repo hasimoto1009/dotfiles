@@ -12,6 +12,7 @@ export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/sbin
 export PATH="$HOME/.rbenv/bin:$PATH"
 
+export LESSCHARSET=utf-8
 #######################################
 # completion
 #######################################
