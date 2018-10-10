@@ -22,8 +22,14 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('junegunn/vim-easy-align')
   call dein#add('tpope/vim-endwise')
   call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('joker1007/vim-ruby-heredoc-syntax')
+  call dein#add('mattn/benchvimrc-vim')
+  call dein#add('vim-scripts/vim-airline')
   " call dein#add('Shougo/neocomplete.vim', { 'on_i': 1 }) " insert mode時に有効化
   " call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
+  if has('job') && has('channel') && has('timers')
+    call dein#add('w0rp/ale') "非同期lint
+  endif
 
 
   " You can specify revision/branch/tag.
@@ -33,9 +39,6 @@ if dein#load_state('~/.vim/dein/')
   call dein#end()
   call dein#save_state()
 endif
-
-filetype plugin indent on
-syntax enable
 
 filetype plugin on
 "ファイル名と内容によてファイルタイプを判別し、ファイルタイププラグインを有効にする
@@ -81,8 +84,10 @@ set showmatch " 対応括弧をハイライト表示する
 set matchtime=3 " 対応括弧の表示秒数を3秒にする
 set wrap " ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
 
+set ruler
 "set columns=175
-"set colorcolumn=80
+set colorcolumn=80
+highlight ColorColumn ctermbg=17
 set fdc=2
 
 set ambiwidth=double "全角記号を半角幅で表示してしまう問題の修正
