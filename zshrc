@@ -10,6 +10,7 @@ export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/sbin
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 #######################################
 # completion
