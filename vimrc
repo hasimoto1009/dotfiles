@@ -27,6 +27,7 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('mattn/benchvimrc-vim')
   call dein#add('tpope/vim-rails')
   call dein#add('vim-scripts/vim-airline')
+  call dein#add('altercation/vim-colors-solarized')
   " call dein#add('Shougo/neocomplete.vim', { 'on_i': 1 }) " insert mode時に有効化
   " call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
   if has('job') && has('channel') && has('timers')
@@ -58,7 +59,7 @@ augroup vimrcEx
 augroup END
 
 "Color Schema
-"colorscheme solarized
+colorscheme solarized
 set background=dark
 let g:solarized_termcolors=256
 
