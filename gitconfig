@@ -1,42 +1,42 @@
 [alias]
-        amend     = commit --amend
-        branches  = branch -a
-        co        = checkout
-        delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
-        discard   = checkout --
-        graph     = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
-        l         = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
-				history   = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
-        merge     = merge --no-ff
-        mylog     = log --graph --name-status --pretty=format:\"%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset\"
-        prestage  = diff -w --word-diff=color
-        precommit = diff --cached -w --word-diff=color --word-diff-regex='[^[:space:]<>]+'
-        remotes   = remote -v
-				save      = commit -m
-        st        = status
-        stashes   = stash list
-        tags      = tag
-        what      = show -w
-        uncommit  = reset --mixed HEAD~
-        unstage   = reset -q HEAD --
+  amend     = commit --amend
+  branches  = branch -a
+  co        = checkout
+  delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+  discard   = checkout --
+  graph     = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+  l         = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
+  history   = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
+  merge     = merge --no-ff
+  mylog     = log --graph --name-status --pretty=format:\"%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset\"
+  prestage  = diff -w --word-diff=color
+  precommit = diff --cached -w --word-diff=color --word-diff-regex='[^[:space:]<>]+'
+  remotes   = remote -v
+  save      = commit -m
+  st        = status
+  stashes   = stash list
+  tags      = tag
+  what      = show -w
+  uncommit  = reset --mixed HEAD~
+  unstage   = reset -q HEAD --
 [core]
-	editor = vim -c \"set fenc=utf-8\"
-        excludesfile = ~/.gitignore_global
-        autocrlf = input
-        quotepath = false
-	pager = LESSCHARSET=utf-8 less
+  editor = vim -c \"set fenc=utf-8\"
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+  quotepath = false
+  pager = LESSCHARSET=utf-8 less
 [filter "hawser"]
-        clean = git hawser clean %f
-        smudge = git hawser smudge %f
-        required = true
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
 [push]
-        default = simple
+  default = simple
 [diff]
-        indentHeuristic = true
+  indentHeuristic = true
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
 [color]
   ui = true
