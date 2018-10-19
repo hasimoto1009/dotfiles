@@ -1,5 +1,5 @@
 [alias]
-  amend     = commit --amend
+  amend     = commit --amend --no-edit
   branches  = branch -a
   co        = checkout
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
