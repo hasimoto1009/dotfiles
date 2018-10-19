@@ -58,7 +58,8 @@ augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
 augroup END
-
+set list
+set listchars=tab:»-
 "Color Schema
 colorscheme solarized
 set background=dark
