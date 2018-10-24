@@ -17,6 +17,7 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
+  call dein#add('airblade/vim-gitgutter')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('junegunn/vim-easy-align')
@@ -102,6 +103,7 @@ set matchpairs& matchpairs+=<:> " 対応括弧に<と>のペアを追加
 set wildmenu wildmode=list:longest,full
 set undolevels=300
 set history=10000 " コマンド・検索パターンの履歴
+set signcolumn=yes
 
 " powerline setting
 "python from powerline.vim import setup as powerline_setup
