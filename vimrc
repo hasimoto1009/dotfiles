@@ -6,7 +6,7 @@ if &compatible
   set nocompatible
 endif
 " Required:
-set runtimepath+=~/.vim/dein//repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('~/.vim/dein/')
@@ -74,7 +74,7 @@ set virtualedit+=block "矩形選択を行末を超えて選択できるよう�
 set undofile
 set undodir=~/.vim/undo/ "UNDOファイルを~/.vim/undoに作成する
 set backupdir=~/.vim/backup/
-set directory=~/.vim/swap//
+set directory=~/.vim/swap/
 set lazyredraw "マクロなどの途中経過を描写しない
 set ttyfast "スクロールが遅い問題の解決
 set nf="" "<C-a>などの数値増減時に８進数を抜く
@@ -117,74 +117,19 @@ set noequalalways
 
 let g:indentLine_faster = 1
 
-" カンマ2回でコメントトグル with NERDCommenter
-let NERDSpaceDelims = 1
-nmap ,, <Plug>NERDCommenterToggle
-vmap ,, <Plug>NERDCommenterToggle
-
-
 set grepprg=rg
-" grep検索のショートカット
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-
-" unite grepにrgを使う
-if executable('rg')
-    let g:unite_source_grep_command = 'rg'
-    let g:unite_source_grep_default_opts = '-r'
-    let g:unite_source_grep_recursive_opt = '-R'
-endif
-
-"openbrowser
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
 
 " insertモードから抜ける
 inoremap <silent> jj <ESC>
 inoremap <silent> kk <ESC>
 
-"折り返された行もそのまま移動する
-"nnoremap j gj
-"nnoremap k gk
+nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR> " vimrcのエディット
+nnoremap <silent> <Space>rv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR> " vimrcをすぐ読み込む
 
-" 挿入モードでのカーソル移動
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-
-" カーソル前の文字削除
-inoremap <silent> <C-h> <C-g>u<C-h>
-" カーソル後の文字削除
-inoremap <silent> <C-d> <Del>
-" カーソルから行頭まで削除
-inoremap <silent> <C-d>e <Esc>lc^
-" カーソルから行末まで削除
-inoremap <silent> <C-d>0 <Esc>lc$
-" カーソルから行頭までヤンク
-inoremap <silent> <C-y>e <Esc>ly0<Insert>
-" カーソルから行末までヤンク
-inoremap <silent> <C-y>0 <Esc>ly$<Insert>
-
-"vimrcのエディット
-nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR>
-nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
-"vimrcをすぐ読み込む
-nnoremap <silent> <Space>rv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
-	nnoremap <silent> <Space>rg :<C-u>source $MYGVIMRC<CR>
-	let g:previm_enable_realtime = 1
-	"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-
-"easy align setting
 vnoremap <silent> <Enter> :EasyAlign<cr>
 
 nnoremap <silent> <C-j> :bprev<CR> "1つ前のバッファに切り替え
 nnoremap <silent> <C-k> :bnext<CR> "1つ後のバッファに切り替え
-
-"ag setting
-" --- type ° to search the word in all files in the current dir
-nmap + :Ag <c-r>=expand("<cword>")<cr><cr>
-nnoremap <space>/ :Ag 
 
 " go get github.com/mattn/files
 nnoremap ,, :<c-u>CtrlPMRUFiles<cr> " ctrlpの起動
@@ -199,18 +144,7 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
-" unite setting
-let g:unite_source_history_yank_enable = 1
-try
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
-catch
-endtry
-" search a file in the filetree
-nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
-" reset not it is <C-l> normally
-:nnoremap <space>r <Plug>(unite_restart)
-
+" ale settings 
 let g:ale_fixers = { 'ruby': ['rubocop'] }
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
