@@ -116,6 +116,8 @@ set noequalalways
 "set guifont=RictyDiscord-RegularForPowerline:h14
 "set guifont=SauceCodePowerline-Regular
 
+let g:indentLine_faster = 1
+
 " カンマ2回でコメントトグル with NERDCommenter
 let NERDSpaceDelims = 1
 nmap ,, <Plug>NERDCommenterToggle
