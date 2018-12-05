@@ -22,6 +22,7 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('junegunn/vim-easy-align')
   call dein#add('jparise/vim-graphql')
+  call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('joker1007/vim-ruby-heredoc-syntax')
   call dein#add('mattn/benchvimrc-vim')
