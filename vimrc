@@ -22,16 +22,12 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('junegunn/vim-easy-align')
   call dein#add('jparise/vim-graphql')
-  call dein#add('tpope/vim-endwise')
   call dein#add('ctrlpvim/ctrlp.vim')
-  call dein#add('elzr/vim-json')
   call dein#add('joker1007/vim-ruby-heredoc-syntax')
   call dein#add('mattn/benchvimrc-vim')
   call dein#add('tpope/vim-rails')
   call dein#add('vim-scripts/vim-airline')
   call dein#add('altercation/vim-colors-solarized')
-  " call dein#add('Shougo/neocomplete.vim', { 'on_i': 1 }) " insert mode時に有効化
-  " call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
   if has('job') && has('channel') && has('timers')
     call dein#add('w0rp/ale') "非同期lint
   endif
@@ -95,6 +91,8 @@ set ruler
 set colorcolumn=80
 highlight ColorColumn ctermbg=17
 set fdc=2
+set hlsearch
+hi Search ctermbg=LightYellow
 
 set ambiwidth=double "全角記号を半角幅で表示してしまう問題の修正
 set nostartofline " 移動コマンドを使ったとき、行頭に移動しない
