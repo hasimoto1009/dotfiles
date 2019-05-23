@@ -5,42 +5,27 @@ filetype off
 if &compatible
   set nocompatible
 endif
-" Required:
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
-if dein#load_state('~/.vim/dein/')
-  call dein#begin( '~/.vim/dein/')
+packadd minpac
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
+call minpac#init()
 
-  " Add or remove your plugins here:
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('junegunn/vim-easy-align')
-  call dein#add('jparise/vim-graphql')
-  call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
-  call dein#add('ctrlpvim/ctrlp.vim')
-  call dein#add('joker1007/vim-ruby-heredoc-syntax')
-  call dein#add('mattn/benchvimrc-vim')
-  call dein#add('tpope/vim-rails')
-  call dein#add('vim-scripts/vim-airline')
-  call dein#add('altercation/vim-colors-solarized')
-  if has('job') && has('channel') && has('timers')
-    call dein#add('w0rp/ale') "非同期lint
-  endif
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-
-  " You can specify revision/branch/tag.
-  "call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
+" Add other plugins here.
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('Shougo/neosnippet.vim')
+call minpac#add('Shougo/neosnippet-snippets')
+call minpac#add('junegunn/vim-easy-align')
+call minpac#add('jparise/vim-graphql')
+call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
+call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('joker1007/vim-ruby-heredoc-syntax')
+call minpac#add('mattn/benchvimrc-vim')
+call minpac#add('tpope/vim-rails')
+call minpac#add('vim-scripts/vim-airline')
+call minpac#add('altercation/vim-colors-solarized')
 
 filetype plugin on
 "ファイル名と内容によてファイルタイプを判別し、ファイルタイププラグインを有効にする
