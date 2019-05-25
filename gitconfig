@@ -40,3 +40,6 @@
   clean = git-lfs clean -- %f
 [color]
   ui = true
+[user]
+  email = hasimoto1009@gmail.com
+  name = hasimoto1009
