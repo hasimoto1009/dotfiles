@@ -12,6 +12,8 @@ export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/sbin
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.nodenv/shims:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export LESSCHARSET=utf-8
 #######################################
