@@ -110,7 +110,14 @@ set noequalalways
 
 let g:indentLine_faster = 1
 
-set grepprg=rg
+if executable('rg') "ripgrep
+  set grepprg=rg\ --vimgrep
+  let g:ctrlp_user_command = ['.git', 'cd %s; rg --files-with-matches ".*"', 'find %s -type f']
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " insertモードから抜ける
 inoremap <silent> jj <ESC>
