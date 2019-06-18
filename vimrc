@@ -2,30 +2,42 @@ set encoding=utf-8
 scriptencoding utf-8
 filetype off
 
+" For a paranoia.
+" Normally `:set nocp` is not needed, because it is done automatically
+" when .vimrc is found.
 if &compatible
+  " `:set nocp` has many side effects. Therefore this should be done
+  " only when 'compatible' is set.
   set nocompatible
 endif
 
+if exists('*minpac#init')
+  " minpac is loaded.
+  call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+  " Add other plugins here.
+  call minpac#add('airblade/vim-gitgutter')
+  call minpac#add('Shougo/neosnippet.vim')
+  call minpac#add('Shougo/neosnippet-snippets')
+  call minpac#add('junegunn/vim-easy-align')
+  call minpac#add('jparise/vim-graphql')
+  call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
+  call minpac#add('ctrlpvim/ctrlp.vim')
+  call minpac#add('joker1007/vim-ruby-heredoc-syntax')
+  call minpac#add('mattn/benchvimrc-vim')
+  call minpac#add('tpope/vim-rails')
+  call minpac#add('vim-scripts/vim-airline')
+  call minpac#add('altercation/vim-colors-solarized')
+endif
+
+" Define user commands for updating/cleaning the plugins.
+" Each of them loads minpac, reloads .vimrc to register the
+" information of plugins, then performs the task.
+command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
 packadd minpac
-
-call minpac#init()
-
-" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-
-" Add other plugins here.
-call minpac#add('airblade/vim-gitgutter')
-call minpac#add('Shougo/neosnippet.vim')
-call minpac#add('Shougo/neosnippet-snippets')
-call minpac#add('junegunn/vim-easy-align')
-call minpac#add('jparise/vim-graphql')
-call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
-call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('joker1007/vim-ruby-heredoc-syntax')
-call minpac#add('mattn/benchvimrc-vim')
-call minpac#add('tpope/vim-rails')
-call minpac#add('vim-scripts/vim-airline')
-call minpac#add('altercation/vim-colors-solarized')
 
 filetype plugin on
 "ファイル名と内容によてファイルタイプを判別し、ファイルタイププラグインを有効にする
