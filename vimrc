@@ -144,14 +144,12 @@ nnoremap <silent> <C-j> :bprev<CR> "1つ前のバッファに切り替え
 nnoremap <silent> <C-k> :bnext<CR> "1つ後のバッファに切り替え
 
 " go get github.com/mattn/files
-nnoremap ,, :<c-u>CtrlPMRUFiles<cr> " ctrlpの起動
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' " ctrlp cache dir
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+let g:ctrlp_use_caching = 0
 let g:ctrlp_root_markers = ['Gemfile', 'pom.xml', 'build.xml']
-let g:ctrlp_lazy_update = 1 " 遅延再描画
 let g:ctrlp_max_height = 20 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|vendor)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
