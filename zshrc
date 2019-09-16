@@ -80,10 +80,9 @@ setopt HIST_REDUCE_BLANKS   # 余分な空白は詰めて記録
 # alias
 #######################################
 
-#alias vi=vim
-#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
-#alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
-#alias view=/Applications/MacVim.app/Contents/MacOS/view
+if [ "$(uname 2> /dev/null)" == "Darwin" ]; then
+  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
+fi
 alias v=vim
 alias g=git
 
