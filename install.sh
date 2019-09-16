@@ -10,6 +10,11 @@ create_dir ~/.vim/undo
 create_dir ~/.vim/swap
 create_dir ~/.vim/backup
 
+if [ ! -x "`which fzf`" ]; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+fi
+
 DOTFILES_DIR=$HOME/dotfiles
 ln -sf $DOTFILES_DIR/zshenv $HOME/.zshenv
 ln -sf $DOTFILES_DIR/zshrc $HOME/.zshrc

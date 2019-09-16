@@ -162,3 +162,5 @@ bindkey '^r' peco-select-history
 #if (which zprof > /dev/null) ;then
 #  zprof | cat
 #fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
