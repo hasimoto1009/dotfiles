@@ -93,6 +93,9 @@ alias grep='rg'
 alias be='bundle exec '
 alias less='less -Qr'
 alias dc_rspec='docker-compose -f docker/development/docker-compose.yml exec -e RAILS_ENV=test app rspec'
+alias gs='git status'
+alias ga='git add'
+alias save='git commit -m'
 
 alias history='history -iD -100'
 
