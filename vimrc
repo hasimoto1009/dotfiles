@@ -92,6 +92,7 @@ set ambiwidth=double "全角記号を半角幅で表示してしまう問題の�
 set nostartofline " 移動コマンドを使ったとき、行頭に移動しない
 set matchpairs& matchpairs+=<:> " 対応括弧に<と>のペアを追加
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildmenu wildmode=list:longest,full
 set undolevels=300
 set history=10000 " コマンド・検索パターンの履歴
@@ -139,7 +140,7 @@ let g:ctrlp_root_markers = ['Gemfile', 'pom.xml', 'build.xml']
 let g:ctrlp_lazy_update = 1 " 遅延再描画
 let g:ctrlp_max_height = 20 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|vendor)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
