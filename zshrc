@@ -166,5 +166,4 @@ bindkey '^r' peco-select-history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+eval "$(starship init zsh)"
