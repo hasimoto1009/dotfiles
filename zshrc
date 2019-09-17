@@ -80,10 +80,9 @@ setopt HIST_REDUCE_BLANKS   # 余分な空白は詰めて記録
 # alias
 #######################################
 
-#alias vi=vim
-#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
-#alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
-#alias view=/Applications/MacVim.app/Contents/MacOS/view
+if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
+fi
 alias v=vim
 alias g=git
 
@@ -93,6 +92,9 @@ alias grep='rg'
 alias be='bundle exec '
 alias less='less -Qr'
 alias dc_rspec='docker-compose -f docker/development/docker-compose.yml exec -e RAILS_ENV=test app rspec'
+alias gs='git status'
+alias ga='git add'
+alias save='git commit -m'
 
 alias history='history -iD -100'
 
@@ -160,3 +162,9 @@ bindkey '^r' peco-select-history
 #if (which zprof > /dev/null) ;then
 #  zprof | cat
 #fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship

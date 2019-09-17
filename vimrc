@@ -104,6 +104,7 @@ set ambiwidth=double "全角記号を半角幅で表示してしまう問題の�
 set nostartofline " 移動コマンドを使ったとき、行頭に移動しない
 set matchpairs& matchpairs+=<:> " 対応括弧に<と>のペアを追加
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildmenu wildmode=list:longest,full
 set undolevels=300
 set history=10000 " コマンド・検索パターンの履歴

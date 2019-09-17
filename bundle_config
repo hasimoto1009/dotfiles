@@ -1,0 +1,4 @@
+---
+BUNDLE_PATH: "vendor/bundle"
+BUNDLE_BUILD__MYSQL2: "--with-mysql-config=/usr/local/Cellar/mysql/8.0.16/bin/mysql_config"
+BUNDLE_BUILD__MYSQL2: "--with-ldflags=-L/usr/local/opt/openssl/lib"
