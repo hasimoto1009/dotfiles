@@ -24,6 +24,8 @@ if exists('*minpac#init')
   call minpac#add('jparise/vim-graphql')
   call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
   call minpac#add('ctrlpvim/ctrlp.vim')
+  call minpac#add('vim-ruby/vim-ruby')
+  call minpac#add('elzr/vim-json')
   call minpac#add('joker1007/vim-ruby-heredoc-syntax')
   call minpac#add('mattn/benchvimrc-vim')
   call minpac#add('tpope/vim-rails')
@@ -67,6 +69,23 @@ set listchars=tab:»-
 colorscheme solarized
 set background=dark
 let g:solarized_termcolors=256
+
+" === vim-ruby-heredoc-syntax ===
+" Add syntax rule
+let g:ruby_heredoc_syntax_defaults = {
+\ "graphql" : {
+\   "start" : "GRAPHQL",
+\ },
+\ "json" : {
+\   "start" : "JSON",
+\ },
+\ "sql" : {
+\   "start" : "SQL",
+\ },
+\ "markdown" : {
+\   "start" : "MD",
+\ },
+\}
 
 set number "行番号表示
 "set paste "paste mode indentそのままで貼り付ける
