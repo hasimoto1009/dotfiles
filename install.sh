@@ -37,3 +37,8 @@ fi
 # dein.vim install
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh && sh ./installer.sh ~/.vim/dein
 
+
+if [ ! -x "`which nodenv`" ]; then
+  curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer | bash
+fi
+
