@@ -109,8 +109,7 @@ set matchtime=3 " 対応括弧の表示秒数を3秒にする
 set wrap " ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
 
 set ruler
-"set columns=175
-set colorcolumn=80
+set colorcolumn=80,120
 highlight ColorColumn ctermbg=17
 set fdc=2
 set hlsearch
