@@ -30,7 +30,6 @@ if exists('*minpac#init')
   call minpac#add('mattn/benchvimrc-vim')
   call minpac#add('tpope/vim-rails')
   call minpac#add('vim-scripts/vim-airline')
-  call minpac#add('altercation/vim-colors-solarized')
 endif
 
 " Define user commands for updating/cleaning the plugins.
@@ -66,9 +65,7 @@ augroup END
 set list
 set listchars=tab:»-
 "Color Schema
-colorscheme solarized
 set background=dark
-let g:solarized_termcolors=256
 
 " === vim-ruby-heredoc-syntax ===
 " Add syntax rule
