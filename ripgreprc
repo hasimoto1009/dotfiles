@@ -1,0 +1,7 @@
+--max-columns=120
+
+--glob=!git/*
+--glob=!vendor/*
+
+# Searches case insensitively if the pattern is all lowercase. Search case sensitively otherwise.
+--smart-case

@@ -24,6 +24,7 @@ ln -sf $DOTFILES_DIR/gitignore_global $HOME/.gitignore_global
 ln -sf $DOTFILES_DIR/gvimrc $HOME/.gvimrc
 ln -sf $DOTFILES_DIR/ideavimrc $HOME/.ideavimrc
 ln -sf $DOTFILES_DIR/railsrc $HOME/.railsrc
+ln -sf $DOTFILES_DIR/ripgreprc $HOME/.ripgreprc
 ln -sf $DOTFILES_DIR/tigrc $HOME/.tigrc
 ln -sf $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
 ln -sf $DOTFILES_DIR/vimrc $HOME/.vimrc
