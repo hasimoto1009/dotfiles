@@ -66,7 +66,7 @@ augroup END
 set list
 set listchars=tab:»-
 "Color Schema
-colorscheme solarized
+"colorscheme solarized
 set background=dark
 let g:solarized_termcolors=256
 
