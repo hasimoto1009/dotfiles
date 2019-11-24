@@ -63,6 +63,9 @@ augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
 augroup END
+
+autocmd QuickFixCmdPost *grep* cwindow
+
 set list
 set listchars=tab:»-
 "Color Schema
