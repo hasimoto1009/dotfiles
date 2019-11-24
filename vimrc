@@ -28,9 +28,11 @@ if exists('*minpac#init')
   call minpac#add('elzr/vim-json')
   call minpac#add('joker1007/vim-ruby-heredoc-syntax')
   call minpac#add('mattn/benchvimrc-vim')
+  call minpac#add('vim-ruby/vim-ruby')
   call minpac#add('tpope/vim-rails')
+  call minpac#add('tpope/vim-rbenv')
+  call minpac#add('tpope/vim-bundler')
   call minpac#add('vim-scripts/vim-airline')
-  call minpac#add('altercation/vim-colors-solarized')
 endif
 
 " Define user commands for updating/cleaning the plugins.
@@ -71,7 +73,6 @@ set listchars=tab:»-
 "Color Schema
 "colorscheme solarized
 set background=dark
-let g:solarized_termcolors=256
 
 " === vim-ruby-heredoc-syntax ===
 " Add syntax rule
@@ -115,12 +116,13 @@ set matchtime=3 " 対応括弧の表示秒数を3秒にする
 set wrap " ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
 
 set ruler
-"set columns=175
-set colorcolumn=80
+set colorcolumn=80,120
 highlight ColorColumn ctermbg=17
 set fdc=2
 set hlsearch
 hi Search ctermbg=LightYellow
+
+autocmd QuickFixCmdPost *grep* cwindow
 
 set ambiwidth=double "全角記号を半角幅で表示してしまう問題の修正
 set nostartofline " 移動コマンドを使ったとき、行頭に移動しない

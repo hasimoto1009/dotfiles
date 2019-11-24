@@ -17,6 +17,7 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export LESSCHARSET=utf-8
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 #######################################
 # completion
 #######################################
