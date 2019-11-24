@@ -42,3 +42,4 @@ if [ ! -x "`which nodenv`" ]; then
   curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer | bash
 fi
 
+git clone --depth 1 https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
