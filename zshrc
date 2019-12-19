@@ -88,6 +88,10 @@ fi
 alias v=vim
 alias g=git
 
+if type exa > /dev/null 2>&1; then
+  alias ls='exa'
+fi
+alias ls='exa'
 alias la='ls -aF'
 alias ll='ls -alF'
 alias grep='rg'
@@ -175,3 +179,4 @@ bindkey '^r' peco-select-history
 
 # Set Spaceship ZSH as a prompt
 eval "$(starship init zsh)"
+#export RUBYOPT="-w"
