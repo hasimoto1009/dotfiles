@@ -37,3 +37,9 @@ fi
 # dein.vim install
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh && sh ./installer.sh ~/.vim/dein
 
+
+if [ ! -x "`which nodenv`" ]; then
+  curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer | bash
+fi
+
+git clone --depth 1 https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
