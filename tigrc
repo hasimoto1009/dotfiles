@@ -1,3 +1,4 @@
 set vertical-split = horizontal
 set commit-order = topo
 set line-graphics = utf-8
+set diff-highlight = true
