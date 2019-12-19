@@ -33,6 +33,7 @@ if exists('*minpac#init')
   call minpac#add('tpope/vim-rbenv')
   call minpac#add('tpope/vim-bundler')
   call minpac#add('vim-scripts/vim-airline')
+  call minpac#add('andymass/vim-matchup')
 endif
 
 " Define user commands for updating/cleaning the plugins.
