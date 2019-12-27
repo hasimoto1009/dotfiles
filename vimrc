@@ -33,6 +33,9 @@ if exists('*minpac#init')
   call minpac#add('tpope/vim-bundler')
   call minpac#add('vim-scripts/vim-airline')
   call minpac#add('andymass/vim-matchup')
+  call minpac#add('prabirshrestha/async.vim')
+  call minpac#add('prabirshrestha/vim-lsp')
+  call minpac#add('mattn/vim-lsp-settings')
   call minpac#add('matsub/github-actions.vim')
 endif
 
