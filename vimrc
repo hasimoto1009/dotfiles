@@ -25,7 +25,6 @@ if exists('*minpac#init')
   call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
   call minpac#add('ctrlpvim/ctrlp.vim')
   call minpac#add('vim-ruby/vim-ruby')
-  call minpac#add('elzr/vim-json')
   call minpac#add('joker1007/vim-ruby-heredoc-syntax')
   call minpac#add('mattn/benchvimrc-vim')
   call minpac#add('vim-ruby/vim-ruby')
