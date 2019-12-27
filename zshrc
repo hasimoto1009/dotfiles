@@ -15,6 +15,9 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.nodenv/shims:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.embulk/bin:$PATH"
 
 export LESSCHARSET=utf-8
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
