@@ -37,6 +37,7 @@ if exists('*minpac#init')
   call minpac#add('prabirshrestha/vim-lsp')
   call minpac#add('mattn/vim-lsp-settings')
   call minpac#add('matsub/github-actions.vim')
+  call minpac#add('shmup/vim-sql-syntax')
 endif
 
 " Define user commands for updating/cleaning the plugins.
