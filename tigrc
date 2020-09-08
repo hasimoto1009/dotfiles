@@ -2,3 +2,6 @@ set vertical-split = horizontal
 set commit-order = topo
 set line-graphics = utf-8
 set diff-highlight = true
+# color setting
+color diff-header default magenta
+color diff-chunk  black   white
