@@ -94,10 +94,10 @@ alias delete-merged-branches='git branch --merged | egrep -v "(^\*|master|stagin
 
 if type exa > /dev/null 2>&1; then
   alias ls='exa'
+  alias ll='exa -al --time-style long-iso'
+else
+  alias ll='ls -al'
 fi
-alias ls='exa'
-alias la='ls -aF'
-alias ll='ls -alF'
 alias grep='rg'
 alias be='bundle exec '
 alias less='less -Qr'
