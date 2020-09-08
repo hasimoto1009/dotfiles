@@ -90,6 +90,7 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
 fi
 alias v=vim
 alias g=git
+alias delete-merged-branches='git branch --merged | egrep -v "(^\*|master|staging|production)" | xargs git branch -d'
 
 if type exa > /dev/null 2>&1; then
   alias ls='exa'
