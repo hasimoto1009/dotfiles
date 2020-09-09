@@ -27,7 +27,6 @@ if exists('*minpac#init')
   call minpac#add('vim-ruby/vim-ruby')
   call minpac#add('joker1007/vim-ruby-heredoc-syntax')
   call minpac#add('mattn/benchvimrc-vim')
-  call minpac#add('vim-ruby/vim-ruby')
   call minpac#add('tpope/vim-projectionist')
   call minpac#add('tpope/vim-rbenv')
   call minpac#add('tpope/vim-bundler')
@@ -38,6 +37,8 @@ if exists('*minpac#init')
   call minpac#add('mattn/vim-lsp-settings')
   call minpac#add('matsub/github-actions.vim')
   call minpac#add('shmup/vim-sql-syntax')
+  call minpac#add('castwide/solargraph')
+  call minpac#add('neoclide/coc.nvim')
 endif
 
 " Define user commands for updating/cleaning the plugins.
