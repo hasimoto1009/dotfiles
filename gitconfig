@@ -55,4 +55,6 @@
   show = diff-highlight | less
   diff = diff-highlight | less
 [rebase]
-	autostash = true
+  autostash = true
+[pull]
+  rebase = true
