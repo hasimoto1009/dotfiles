@@ -152,6 +152,8 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 set noequalalways
 "set guifont=RictyDiscord-RegularForPowerline:h14
 "set guifont=SauceCodePowerline-Regular
+let g:airline_powerline_fonts = 1
+
 
 let g:indentLine_faster = 1
 
