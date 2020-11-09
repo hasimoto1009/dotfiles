@@ -113,6 +113,7 @@ set lazyredraw "マクロなどの途中経過を描写しない
 set ttyfast "スクロールが遅い問題の解決
 set nf="" "<C-a>などの数値増減時に８進数を抜く
 set synmaxcol=200 "一行が200文字以上の場合は解析をしないようにする
+set updatetime=250 "ミリ秒入力がなければ、スワップがディスクに書き込まれる gitgutterの更新頻度でもある
 
 set hidden "ファイル編集中でもバッファを切り替えられるようにする
 
