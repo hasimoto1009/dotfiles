@@ -131,8 +131,6 @@ set fdc=2
 set hlsearch
 hi Search ctermbg=LightYellow
 
-autocmd QuickFixCmdPost *grep* cwindow
-
 set ambiwidth=double "全角記号を半角幅で表示してしまう問題の修正
 set nostartofline " 移動コマンドを使ったとき、行頭に移動しない
 set matchpairs& matchpairs+=<:> " 対応括弧に<と>のペアを追加
