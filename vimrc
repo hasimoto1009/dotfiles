@@ -39,6 +39,7 @@ if exists('*minpac#init')
   call minpac#add('shmup/vim-sql-syntax')
   call minpac#add('castwide/solargraph')
   call minpac#add('neoclide/coc.nvim')
+  call minpac#add('thoughtbot/vim-rspec')
 endif
 
 " Define user commands for updating/cleaning the plugins.
@@ -201,3 +202,12 @@ let g:ale_fixers = { 'ruby': ['rubocop'] }
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
 highlight ALEWarning ctermbg=88
+
+" vim-rspec shortcut
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_command = "!bin/rspec {spec}"
+let g:rspec_runner = "os_x_iterm2"
+
