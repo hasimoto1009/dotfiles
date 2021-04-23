@@ -30,7 +30,7 @@ if exists('*minpac#init')
   call minpac#add('tpope/vim-projectionist')
   call minpac#add('tpope/vim-rbenv')
   call minpac#add('tpope/vim-bundler')
-  call minpac#add('vim-scripts/vim-airline')
+  "call minpac#add('vim-scripts/vim-airline')
   call minpac#add('andymass/vim-matchup')
   call minpac#add('prabirshrestha/async.vim')
   call minpac#add('prabirshrestha/vim-lsp')
@@ -152,8 +152,6 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 set noequalalways
 "set guifont=RictyDiscord-RegularForPowerline:h14
 "set guifont=SauceCodePowerline-Regular
-let g:airline_powerline_fonts = 1
-
 
 let g:indentLine_faster = 1
 
