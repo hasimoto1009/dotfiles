@@ -89,7 +89,6 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
   alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim'
 fi
 alias v=vim
-alias g=git
 alias delete-merged-branches='git branch --merged | egrep -v "(^\*|master|staging|production)" | xargs git branch -d'
 
 if type exa > /dev/null 2>&1; then
