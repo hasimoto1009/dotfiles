@@ -11,36 +11,36 @@ if &compatible
   set nocompatible
 endif
 
-if exists('*minpac#init')
-  " minpac is loaded.
-  call minpac#init()
-  call minpac#add('k-takata/minpac', {'type': 'opt'})
+packadd minpac
 
-  " Add other plugins here.
-  call minpac#add('airblade/vim-gitgutter')
-  call minpac#add('Shougo/neosnippet.vim')
-  call minpac#add('Shougo/neosnippet-snippets')
-  call minpac#add('junegunn/vim-easy-align')
-  call minpac#add('jparise/vim-graphql')
-  call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
-  call minpac#add('ctrlpvim/ctrlp.vim')
-  call minpac#add('vim-ruby/vim-ruby')
-  call minpac#add('joker1007/vim-ruby-heredoc-syntax')
-  call minpac#add('mattn/benchvimrc-vim')
-  call minpac#add('tpope/vim-projectionist')
-  call minpac#add('tpope/vim-rbenv')
-  call minpac#add('tpope/vim-bundler')
-  "call minpac#add('vim-scripts/vim-airline')
-  call minpac#add('andymass/vim-matchup')
-  call minpac#add('prabirshrestha/async.vim')
-  call minpac#add('prabirshrestha/vim-lsp')
-  call minpac#add('mattn/vim-lsp-settings')
-  call minpac#add('matsub/github-actions.vim')
-  call minpac#add('shmup/vim-sql-syntax')
-  call minpac#add('castwide/solargraph')
-  call minpac#add('neoclide/coc.nvim')
-  call minpac#add('thoughtbot/vim-rspec')
-endif
+" minpac is loaded.
+call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+" Add other plugins here.
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('Shougo/neosnippet.vim')
+call minpac#add('Shougo/neosnippet-snippets')
+call minpac#add('junegunn/vim-easy-align')
+call minpac#add('jparise/vim-graphql')
+call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
+call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('joker1007/vim-ruby-heredoc-syntax')
+call minpac#add('mattn/benchvimrc-vim')
+call minpac#add('tpope/vim-projectionist')
+call minpac#add('tpope/vim-rbenv')
+call minpac#add('tpope/vim-bundler')
+"call minpac#add('vim-scripts/vim-airline')
+call minpac#add('andymass/vim-matchup')
+call minpac#add('prabirshrestha/async.vim')
+call minpac#add('prabirshrestha/vim-lsp')
+call minpac#add('mattn/vim-lsp-settings')
+call minpac#add('matsub/github-actions.vim')
+call minpac#add('shmup/vim-sql-syntax')
+call minpac#add('castwide/solargraph')
+call minpac#add('neoclide/coc.nvim')
+call minpac#add('thoughtbot/vim-rspec')
 
 " Define user commands for updating/cleaning the plugins.
 " Each of them loads minpac, reloads .vimrc to register the
@@ -48,7 +48,6 @@ endif
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
 command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
-packadd minpac
 
 filetype plugin on
 "ファイル名と内容によてファイルタイプを判別し、ファイルタイププラグインを有効にする
