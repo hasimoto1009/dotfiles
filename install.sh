@@ -40,7 +40,7 @@ if !(type "diff-highlight" > /dev/null 2>&1); then
 fi
 
 # dein.vim install
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh && sh ./installer.sh ~/.vim/dein
+#curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh && sh ./installer.sh ~/.vim/dein
 
 
 if [ ! -x "`which nodenv`" ]; then
