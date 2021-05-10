@@ -48,3 +48,5 @@ if [ ! -x "`which nodenv`" ]; then
 fi
 
 git clone --depth 1 https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+
+echo 'export MAKE="make -j8"' >> $home/.zsh_profile
