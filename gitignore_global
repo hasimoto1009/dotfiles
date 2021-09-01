@@ -5,3 +5,4 @@ Thumbs.db
 /.bundle
 tags
 .idea/*
+.projections.json

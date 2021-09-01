@@ -19,18 +19,20 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " Add other plugins here.
 call minpac#add('airblade/vim-gitgutter')
+call minpac#add('dense-analysis/ale', { 'type': 'opt' })
 call minpac#add('Shougo/neosnippet.vim')
 call minpac#add('Shougo/neosnippet-snippets')
 call minpac#add('junegunn/vim-easy-align')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
 call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('vim-ruby/vim-ruby')
-call minpac#add('joker1007/vim-ruby-heredoc-syntax')
+call minpac#add('vim-ruby/vim-ruby', { 'type': 'opt' })
+call minpac#add('joker1007/vim-ruby-heredoc-syntax', { 'on_ft': 'ruby' })
 call minpac#add('mattn/benchvimrc-vim')
-call minpac#add('tpope/vim-projectionist')
-call minpac#add('tpope/vim-rbenv')
-call minpac#add('tpope/vim-bundler')
+call minpac#add('tpope/vim-rails')
+"call minpac#add('tpope/vim-projectionist')
+call minpac#add('tpope/vim-rbenv', { 'on_ft': 'ruby' })
+call minpac#add('tpope/vim-bundler', { 'on_ft': 'ruby' })
 "call minpac#add('vim-scripts/vim-airline')
 call minpac#add('andymass/vim-matchup')
 call minpac#add('prabirshrestha/async.vim')
@@ -38,9 +40,11 @@ call minpac#add('prabirshrestha/vim-lsp')
 call minpac#add('mattn/vim-lsp-settings')
 call minpac#add('matsub/github-actions.vim')
 call minpac#add('shmup/vim-sql-syntax')
-call minpac#add('castwide/solargraph')
+call minpac#add('google/vim-jsonnet')
+call minpac#add('castwide/solargraph', { 'on_ft': 'ruby' })
 call minpac#add('neoclide/coc.nvim')
-call minpac#add('thoughtbot/vim-rspec')
+call minpac#add('thoughtbot/vim-rspec', { 'on_ft': 'ruby' })
+call minpac#add('yasuhiroki/circleci.vim')
 
 " Define user commands for updating/cleaning the plugins.
 " Each of them loads minpac, reloads .vimrc to register the
@@ -49,9 +53,8 @@ command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
 command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
 
+filetype on
 filetype plugin on
-"ファイル名と内容によてファイルタイプを判別し、ファイルタイププラグインを有効にする
-filetype plugin indent on
 filetype indent on
 runtime macros/matchit.vim " 対応するタグに飛ぶ
 syntax enable "色付けをオン
@@ -73,6 +76,7 @@ augroup vimrcEx
 augroup END
 
 autocmd QuickFixCmdPost *grep* cwindow
+autocmd BufWritePre * :%s/\s\+$//ge "保存時に行末の空白を除去する
 
 set list
 set listchars=tab:»-
@@ -187,14 +191,14 @@ nnoremap <silent> <C-k> :bnext<CR> "1つ後のバッファに切り替え
 let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_root_markers = ['Gemfile', 'pom.xml', 'build.xml']
-let g:ctrlp_max_height = 20 
+let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|vendor)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
-" ale settings 
+" ale settings
 let g:ale_fixers = { 'ruby': ['rubocop'] }
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
@@ -205,6 +209,5 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_command = "!bin/rspec {spec}"
+let g:rspec_command = "!bundle exec rspec {spec}"
 let g:rspec_runner = "os_x_iterm2"
-

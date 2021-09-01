@@ -24,7 +24,7 @@
   excludesfile = ~/.gitignore_global
   autocrlf = input
   quotepath = false
-  pager = LESSCHARSET=utf-8 less
+  pager = delta
 [filter "hawser"]
   clean = git hawser clean %f
   smudge = git hawser smudge %f
@@ -58,3 +58,9 @@
   autostash = true
 [pull]
   rebase = true
+[delta]
+  plus-color = "#012800"
+  minus-color = "#340001"
+  syntax-theme = Monokai Extended
+[interactive]
+  diffFilter = delta --color-only

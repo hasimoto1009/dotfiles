@@ -180,6 +180,7 @@ bindkey '^r' peco-select-history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+#export RUBYOPT="-w"
 # Set Spaceship ZSH as a prompt
 eval "$(starship init zsh)"
-#export RUBYOPT="-w"
+export PATH="$HOME/.embulk/bin:$PATH"
