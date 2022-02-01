@@ -1,4 +1,4 @@
---max-columns=120
+--max-columns=240
 
 --glob=!git/*
 --glob=!vendor/*
