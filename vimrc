@@ -102,6 +102,16 @@ let g:ruby_heredoc_syntax_defaults = {
 \}
 
 set number "行番号表示
+
+" アクティブなバッファは相対行を追加する
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+set relativenumber
+set number relativenumber
+
 "set paste "paste mode indentそのままで貼り付ける
 set clipboard=unnamed "OSのクリップボードと共有
 set tabstop=2
