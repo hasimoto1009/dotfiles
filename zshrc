@@ -17,7 +17,6 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$HOME/.embulk/bin:$PATH"
 
 export LESSCHARSET=utf-8
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
@@ -183,4 +182,3 @@ bindkey '^r' peco-select-history
 #export RUBYOPT="-w"
 # Set Spaceship ZSH as a prompt
 eval "$(starship init zsh)"
-export PATH="$HOME/.embulk/bin:$PATH"
