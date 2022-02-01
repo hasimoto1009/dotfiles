@@ -37,18 +37,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=022'
 ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
 
 #######################################
-# prompt
-#######################################
-
-autoload -Uz colors && colors
-autoload -Uz add-zsh-hook
-autoload -Uz vcs_info
-
-if [ -f ~/.zsh/my_prompt.zsh ]; then
-  source ~/.zsh/my_prompt.zsh
-fi
-
-#######################################
 # option
 #######################################
 
