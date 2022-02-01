@@ -42,9 +42,9 @@ call minpac#add('matsub/github-actions.vim')
 call minpac#add('shmup/vim-sql-syntax')
 call minpac#add('google/vim-jsonnet')
 call minpac#add('castwide/solargraph', { 'on_ft': 'ruby' })
-call minpac#add('neoclide/coc.nvim')
 call minpac#add('thoughtbot/vim-rspec', { 'on_ft': 'ruby' })
 call minpac#add('yasuhiroki/circleci.vim')
+call minpac#add('vimwiki/vimwiki')
 
 " Define user commands for updating/cleaning the plugins.
 " Each of them loads minpac, reloads .vimrc to register the
@@ -221,3 +221,5 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "!bundle exec rspec {spec}"
 let g:rspec_runner = "os_x_iterm2"
+
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
