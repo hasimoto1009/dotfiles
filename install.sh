@@ -1,5 +1,17 @@
 #!/bin/sh
 
+# install home brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install readline # irbで日本語入力をするために必要
+if !(type "git" > /dev/null 2>&1); then
+  brew install git
+fi
+
+if !(type "rbenv" > /dev/null 2>&1); then
+  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+fi
+
 create_dir() {
 if [ ! -d $1 ]; then
     mkdir -p $1
