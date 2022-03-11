@@ -122,7 +122,7 @@ set virtualedit+=block "矩形選択を行末を超えて選択できるよう�
 set undofile
 set undodir=~/.vim/undo/ "UNDOファイルを~/.vim/undoに作成する
 set backupdir=~/.vim/backup/
-set directory=~/.vim/swap/
+set noswapfile
 set lazyredraw "マクロなどの途中経過を描写しない
 set ttyfast "スクロールが遅い問題の解決
 set nf="" "<C-a>などの数値増減時に８進数を抜く
