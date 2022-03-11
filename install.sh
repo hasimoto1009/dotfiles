@@ -18,6 +18,7 @@ if [ ! -d $1 ]; then
 fi
 }
 create_dir ~/.bundle/
+create_dir ~/.cargo/
 create_dir ~/.vim/undo
 create_dir ~/.vim/swap
 create_dir ~/.vim/backup
@@ -31,6 +32,7 @@ fi
 DOTFILES_DIR=$HOME/dotfiles
 ln -sf $DOTFILES_DIR/zshenv $HOME/.zshenv
 ln -sf $DOTFILES_DIR/zshrc $HOME/.zshrc
+ln -sf $DOTFILES_DIR/cargo_config.toml $HOME/.cargo/config.toml
 ln -sf $DOTFILES_DIR/gemrc $HOME/.gemrc
 ln -sf $DOTFILES_DIR/gitconfig $HOME/.gitconfig
 ln -sf $DOTFILES_DIR/gitignore_global $HOME/.gitignore_global
@@ -63,4 +65,4 @@ fi
 
 git clone --depth 1 https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 
-echo 'export MAKE="make -j8"' >> $home/.zsh_profile
+echo 'export MAKE="make -j8"' >> $HOME/.zsh_profile
