@@ -9,7 +9,7 @@ rr = "run --release"
 space_example = ["run", "--release", "--", "\"command list\""]
 
 [build]
-jobs = 1                      # number of parallel jobs, defaults to # of CPUs
+jobs = 8                      # number of parallel jobs, defaults to # of CPUs
 rustc = "rustc"               # the rust compiler tool
 rustc-wrapper = "…"           # run this wrapper instead of `rustc`
 rustc-workspace-wrapper = "…" # run this wrapper instead of `rustc` for workspace members
