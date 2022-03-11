@@ -194,8 +194,8 @@ nnoremap <silent> <Space>rv :<C-u>source $MYVIMRC \| if has('gui_running') \| so
 
 vnoremap <silent> <Enter> :EasyAlign<cr>
 
-nnoremap <silent> <C-j> :bprev<CR> "1つ前のバッファに切り替え
-nnoremap <silent> <C-k> :bnext<CR> "1つ後のバッファに切り替え
+nnoremap <silent> <C-k> :bprev<CR> "1つ前のバッファに切り替え
+nnoremap <silent> <C-j> :bnext<CR> "1つ後のバッファに切り替え
 
 " go get github.com/mattn/files
 let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
