@@ -222,4 +222,4 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "!bundle exec rspec {spec}"
 let g:rspec_runner = "os_x_iterm2"
 
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/src/til/', 'syntax': 'markdown', 'ext': '.md'}]
