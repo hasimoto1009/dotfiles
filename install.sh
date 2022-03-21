@@ -22,7 +22,6 @@ create_dir ~/.cargo/
 create_dir ~/.vim/undo
 create_dir ~/.vim/swap
 create_dir ~/.vim/backup
-create_dir ~/.config/karabiner/
 
 if [ ! -x "`which fzf`" ]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -44,7 +43,6 @@ ln -sf $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
 ln -sf $DOTFILES_DIR/vimrc $HOME/.vimrc
 ln -sf $DOTFILES_DIR/bundle_config $HOME/.bundle/config
 ln -sfn $DOTFILES_DIR/.zsh $HOME/.zsh
-ln -sf $DOTFILES_DIR/config/karabiner/karabiner.json $HOME/.config/karabiner/karabiner.json
 
 if !(type "cargo" > /dev/null 2>&1); then
   curl https://sh.rustup.rs -sSf | sh
