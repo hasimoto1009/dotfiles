@@ -18,7 +18,6 @@ if [ ! -d $1 ]; then
 fi
 }
 create_dir ~/.bundle/
-create_dir ~/.cargo/
 create_dir ~/.vim/undo
 create_dir ~/.vim/swap
 create_dir ~/.vim/backup
@@ -30,7 +29,6 @@ fi
 
 DOTFILES_DIR=$HOME/dotfiles
 ln -sf $DOTFILES_DIR/zshenv $HOME/.zshenv
-ln -sf $DOTFILES_DIR/cargo_config.toml $HOME/.cargo/config.toml
 ln -sf $DOTFILES_DIR/ideavimrc $HOME/.ideavimrc
 ln -sf $DOTFILES_DIR/railsrc $HOME/.railsrc
 ln -sf $DOTFILES_DIR/ripgreprc $HOME/.ripgreprc
