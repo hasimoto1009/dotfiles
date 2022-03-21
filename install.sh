@@ -17,7 +17,6 @@ if [ ! -d $1 ]; then
     mkdir -p $1
 fi
 }
-create_dir ~/.bundle/
 create_dir ~/.vim/undo
 create_dir ~/.vim/swap
 create_dir ~/.vim/backup
@@ -33,7 +32,6 @@ ln -sf $DOTFILES_DIR/ideavimrc $HOME/.ideavimrc
 ln -sf $DOTFILES_DIR/railsrc $HOME/.railsrc
 ln -sf $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
 ln -sf $DOTFILES_DIR/vimrc $HOME/.vimrc
-ln -sf $DOTFILES_DIR/bundle_config $HOME/.bundle/config
 
 if !(type "cargo" > /dev/null 2>&1); then
   curl https://sh.rustup.rs -sSf | sh
