@@ -1,0 +1,1 @@
+export MAKE="make -j8"
