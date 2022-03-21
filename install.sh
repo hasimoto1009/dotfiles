@@ -31,7 +31,6 @@ DOTFILES_DIR=$HOME/dotfiles
 ln -sf $DOTFILES_DIR/zshenv $HOME/.zshenv
 ln -sf $DOTFILES_DIR/ideavimrc $HOME/.ideavimrc
 ln -sf $DOTFILES_DIR/railsrc $HOME/.railsrc
-ln -sf $DOTFILES_DIR/ripgreprc $HOME/.ripgreprc
 ln -sf $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
 ln -sf $DOTFILES_DIR/vimrc $HOME/.vimrc
 ln -sf $DOTFILES_DIR/bundle_config $HOME/.bundle/config
