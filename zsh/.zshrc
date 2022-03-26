@@ -174,7 +174,7 @@ bindkey '^r' peco-select-history
 #  zprof | cat
 #fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.config/zsh/.fzf.zsh ] && source $HOME/.config/zsh/.fzf.zsh
 
 #export RUBYOPT="-w"
 # Set Spaceship ZSH as a prompt
