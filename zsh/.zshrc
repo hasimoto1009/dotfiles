@@ -88,8 +88,8 @@ alias v=vim
 alias delete-merged-branches='git branch --merged | egrep -v "(^\*|master|staging|production)" | xargs git branch -d'
 
 if type exa > /dev/null 2>&1; then
-  alias ls='exa'
-  alias ll='exa -al --time-style long-iso'
+  alias ls='exa --classify --icons -h --reverse'
+  alias ll='exa -al --icons --time-style long-iso'
 else
   alias ll='ls -al'
 fi
