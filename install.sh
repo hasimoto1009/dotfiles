@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo 'export ZDOTDIR=$HOME/.config/zsh' > $HOME/.zshenv
+
 # install home brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -27,7 +29,6 @@ if [ ! -x "`which fzf`" ]; then
 fi
 
 DOTFILES_DIR=$HOME/dotfiles
-ln -sf $DOTFILES_DIR/zshenv $HOME/.zshenv
 ln -sf $DOTFILES_DIR/ideavimrc $HOME/.ideavimrc
 ln -sf $DOTFILES_DIR/vimrc $HOME/.vimrc
 
