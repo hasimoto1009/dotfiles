@@ -136,6 +136,18 @@ export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_CACHE_HOME="$HOME"/.cache
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_STATE_HOME="$HOME"/.local/state
+export XDG_RUNTIME_DIR=/tmp/orbit-"$USER"
+
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle/config
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle/cache
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle/plugin
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export SOLARGRAPH_CACHE=$XDG_CACHE_HOME/solargraph
 
 #######################################
 # environment variable
@@ -153,12 +165,13 @@ export PATH=$PATH:/usr/sbin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.nodenv/shims:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$CARGO_HOME/bin:$PATH"
 
 export LESSCHARSET=utf-8
-export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export RUBYOPT='-W:deprecated'
+
 #######################################
 # completion
 #######################################
@@ -284,6 +297,5 @@ export PATH=$PATH:$GOPATH/bin
 
 [ -f $HOME/.config/zsh/.fzf.zsh ] && source $HOME/.config/zsh/.fzf.zsh
 
-#export RUBYOPT="-w"
 # Set Spaceship ZSH as a prompt
 eval "$(starship init zsh)"
