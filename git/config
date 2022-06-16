@@ -5,45 +5,45 @@
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
   discard   = checkout --
   graph     = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
-  l         = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
   history   = log -10 --format=format:'%Cgreen%h %Creset• %s (%cN, %ar)'
+  l         = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
   merge     = merge --no-ff
   mylog     = log --graph --name-status --pretty=format:\"%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset\"
-  prestage  = diff -w --word-diff=color
   precommit = diff --cached -w --word-diff=color --word-diff-regex='[^[:space:]<>]+'
+  prestage  = diff -w --word-diff=color
   remotes   = remote -v
   save      = commit -m
   st        = status
   stashes   = stash list
   tags      = tag
-  what      = show -w
   uncommit  = reset --mixed HEAD~
   unstage   = reset -q HEAD --
-[core]
-  editor = vim -c \"set fenc=utf-8\"
-  autocrlf = input
-  quotepath = false
-[filter "hawser"]
-  clean = git hawser clean %f
-  smudge = git hawser smudge %f
-  required = true
-[push]
-  default = simple
-[diff]
-  indentHeuristic = true
+  what      = show -w
 [color]
   ui = true
-[user]
-  email = hasimoto1009@gmail.com
-  name = hasimoto1009
+[core]
+  autocrlf = input
+  editor = vim -c \"set fenc=utf-8\"
+  quotepath = false
+[diff]
+  indentHeuristic = true
+[filter "hawser"]
+  clean = git hawser clean %f
+  required = true
+  smudge = git hawser smudge %f
+[init]
+ templatedir = ~/.git-templates/git-secrets
+[pull]
+  rebase = true
+[push]
+  default = simple
+[rebase]
+  autostash = true
 [secrets]
   providers = git secrets --aws-provider
   patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
   patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
   patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
-[init]
- templatedir = ~/.git-templates/git-secrets
-[rebase]
-  autostash = true
-[pull]
-  rebase = true
+[user]
+  email = hasimoto1009@gmail.com
+  name = hasimoto1009
