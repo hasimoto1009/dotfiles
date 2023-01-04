@@ -5,4 +5,5 @@ tig/history
 zsh/.zsh_history
 zsh/.zcompdump
 zsh/.zcompdump.zwc
+zsh/.zcompcache/
 iterm2/AppSupport
