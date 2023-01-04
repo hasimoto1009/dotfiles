@@ -24,8 +24,15 @@
 [core]
   autocrlf = input
   editor = vim -c \"set fenc=utf-8\"
+  pager = delta
   quotepath = false
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  line-numbers = true
+  theme =
 [diff]
+  colorMoved = default
   indentHeuristic = true
 [filter "hawser"]
   clean = git hawser clean %f
@@ -33,6 +40,8 @@
   smudge = git hawser smudge %f
 [init]
  templatedir = ~/.git-templates/git-secrets
+[interactive]
+  diffFilter = delta --color-only --diff-so-fancy --show-syntax-themes --dark
 [pull]
   rebase = true
 [push]
