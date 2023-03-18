@@ -145,6 +145,7 @@ export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle/plugin
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export RBENV_ROOT=$XDG_DATA_HOME/rbenv
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export SOLARGRAPH_CACHE=$XDG_CACHE_HOME/solargraph
@@ -262,21 +263,6 @@ bindkey -e
 #######################################
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-function gem(){
-  $HOME/.rbenv/shims/gem $*
-  if [ "$1" = "install" ] || [ "$1" = "i" ] || [ "$1" = "uninstall" ] || [ "$1" = "uni" ]
-  then
-    rbenv rehash
-  fi
-}
-
-function bundle(){
-  $HOME/.rbenv/shims/bundle $*
-  if [ "$1" = "install" ] || [ "$1" = "update" ]
-  then
-    rbenv rehash
-  fi
-}
 
 #######################################
 # nodenv
