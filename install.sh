@@ -2,8 +2,9 @@
 
 echo 'export ZDOTDIR=$HOME/.config/zsh' > $HOME/.zshenv
 
-# install home brew
+if !(type "brew" > /dev/null 2>&1); then
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
 brew install readline # irbで日本語入力をするために必要
 if !(type "git" > /dev/null 2>&1); then
