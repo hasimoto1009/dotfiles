@@ -143,6 +143,7 @@ export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle/cache
 export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle/plugin
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export RBENV_ROOT=$XDG_DATA_HOME/rbenv
@@ -209,7 +210,6 @@ REPORTTIME=1                                 # 実行時間1秒以上のとき�
 # history setting
 #######################################
 
-HISTFILE=~/.zsh_history
 HISTORY_IGNORE="(ls|ll|pwd)"
 HISTSIZE=1000000
 SAVEHIST=1000000
