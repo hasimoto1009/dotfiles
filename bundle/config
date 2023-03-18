@@ -1,5 +1,4 @@
 ---
 BUNDLE_BUILD__MYSQL2: "--with-ldflags=-L/usr/local/opt/openssl/lib"
-BUNDLE_DISABLE_PLATFORM_WARNINGS: "true"
 BUNDLE_JOBS: "4"
 BUNDLE_FORCE_RUBY_PLATFORM: "ruby"
