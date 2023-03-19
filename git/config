@@ -40,8 +40,6 @@
   smudge = git hawser smudge %f
 [init]
  templatedir = ~/.git-templates/git-secrets
-[interactive]
-  diffFilter = delta --color-only --diff-so-fancy --show-syntax-themes --dark
 [merge]
   conflictstyle = diff3
 [pull]
