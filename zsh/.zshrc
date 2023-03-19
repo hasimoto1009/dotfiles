@@ -157,23 +157,16 @@ export ZIM_HOME=$XDG_CACHE_HOME/zim
 #######################################
 
 export LANG=ja_JP.UTF-8
+export LESSCHARSET=utf-8
 
 export PATH=$PATH:/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/bin
+export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/git/bin
-export PATH=$PATH:/usr/sbin
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.nodenv/shims:$PATH"
-export PATH="$HOME/.nodenv/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$CARGO_HOME/bin:$PATH"
-
-export LESSCHARSET=utf-8
-export RUBYOPT='-W:deprecated'
 
 #######################################
 # completion
@@ -181,12 +174,6 @@ export RUBYOPT='-W:deprecated'
 
 autoload  -Uz compinit && compinit           # 補完機能を有効にする
 zstyle ':completion:*:default' menu select=2 # 補完候補をウロウロ選ぶ
-
-fpath=(~/.zsh/src $fpath)
-
-if [ -f ~/.zsh/zsh-autosuggestions.zsh ]; then
-  source ~/.zsh/zsh-autosuggestions.zsh
-fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=022'
 ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
@@ -250,7 +237,6 @@ alias history='history -iD -100'
 
 #グローバルエイリアス
 alias -g L='| less'
-alias -g G='| jvgrep'
 
 #######################################
 # key bind
