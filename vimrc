@@ -19,33 +19,35 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " Add other plugins here.
 call minpac#add('airblade/vim-gitgutter')
-call minpac#add('dense-analysis/ale', { 'type': 'opt' })
-call minpac#add('Shougo/neosnippet.vim')
-call minpac#add('Shougo/neosnippet-snippets')
-call minpac#add('junegunn/vim-easy-align')
-call minpac#add('jparise/vim-graphql')
-call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' }) " filetypeがrubyの時有効
-call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('vim-ruby/vim-ruby', { 'type': 'opt' })
-call minpac#add('joker1007/vim-ruby-heredoc-syntax', { 'on_ft': 'ruby' })
-call minpac#add('mattn/benchvimrc-vim')
-call minpac#add('tpope/vim-rails')
-call minpac#add('tpope/vim-fugitive')
-"call minpac#add('tpope/vim-projectionist')
-call minpac#add('tpope/vim-rbenv', { 'on_ft': 'ruby' })
-call minpac#add('tpope/vim-bundler', { 'on_ft': 'ruby' })
-"call minpac#add('vim-scripts/vim-airline')
 call minpac#add('andymass/vim-matchup')
-call minpac#add('prabirshrestha/async.vim')
-call minpac#add('prabirshrestha/vim-lsp')
-call minpac#add('mattn/vim-lsp-settings')
-call minpac#add('matsub/github-actions.vim')
+call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('dense-analysis/ale')
+call minpac#add('junegunn/vim-easy-align')
+call minpac#add('mattn/benchvimrc-vim')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('vimwiki/vimwiki')
+
+" ruby plugins
+call minpac#add('thoughtbot/vim-rspec', { 'on_ft': 'ruby' })
+call minpac#add('tpope/vim-bundler', { 'on_ft': 'ruby' })
+call minpac#add('tpope/vim-endwise', { 'on_ft': 'ruby' })
+call minpac#add('tpope/vim-rails')
+call minpac#add('tpope/vim-rbenv', { 'on_ft': 'ruby' })
+call minpac#add('vim-ruby/vim-ruby')
+
+" syntax plugins
 call minpac#add('shmup/vim-sql-syntax')
 call minpac#add('google/vim-jsonnet')
-call minpac#add('castwide/solargraph', { 'on_ft': 'ruby' })
-call minpac#add('thoughtbot/vim-rspec', { 'on_ft': 'ruby' })
+call minpac#add('jparise/vim-graphql')
+call minpac#add('joker1007/vim-ruby-heredoc-syntax', { 'on_ft': 'ruby' })
+call minpac#add('matsub/github-actions.vim')
 call minpac#add('yasuhiroki/circleci.vim')
-call minpac#add('vimwiki/vimwiki')
+
+" lsp plugins and asyncomplete
+call minpac#add('prabirshrestha/vim-lsp')
+call minpac#add('mattn/vim-lsp-settings')
+call minpac#add('prabirshrestha/asyncomplete.vim')
+call minpac#add('prabirshrestha/asyncomplete-lsp.vim')
 
 " Define user commands for updating/cleaning the plugins.
 " Each of them loads minpac, reloads .vimrc to register the
