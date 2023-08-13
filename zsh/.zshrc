@@ -65,6 +65,7 @@ export ZIM_HOME=$XDG_CACHE_HOME/zim
 
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
+export LESSHISTFILE="$XDG_STATE_HOME"/less/history
 
 export PATH=$PATH:/bin
 export PATH=$PATH:/sbin
