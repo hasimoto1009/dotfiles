@@ -36,3 +36,19 @@ mkdir -p  ~/.vim/undo && mkdir -p  ~/.vim/swap && mkdir -p  ~/.vim/backup
 
 # minpac install
 git clone --depth 1 https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+
+# touch history files
+if [ ! -e "~/.local/share/irb/history" ]; then
+  mkdir -p $HOME/.local/share/irb/
+  touch $HOME/.local/share/irb/history
+fi
+
+if [ ! -e "~/.local/state/zsh/history" ]; then
+  mkdir -p $HOME/.local/state/zsh/
+  touch $HOME/.local/state/zsh/history
+fi
+
+if [ ! -e "~/.local/state/less/history" ]; then
+  mkdir -p $HOME/.local/state/less/
+  touch $HOME/.local/state/less/history
+fi
