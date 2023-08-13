@@ -40,6 +40,7 @@
   smudge = git hawser smudge %f
 [init]
  templatedir = ~/.git-templates/git-secrets
+ defaultBranch = main
 [merge]
   conflictstyle = diff3
 [pull]
