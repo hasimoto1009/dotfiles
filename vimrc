@@ -143,6 +143,8 @@ set re=1
 
 set ruler
 set colorcolumn=80,120
+set cursorline
+set cursorcolumn
 highlight ColorColumn ctermbg=17
 set fdc=2
 set hlsearch
