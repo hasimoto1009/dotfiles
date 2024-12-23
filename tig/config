@@ -1,7 +1,29 @@
-set vertical-split = horizontal
-set commit-order = topo
-set line-graphics = utf-8
-set diff-highlight = true
-# color setting
-color diff-header default magenta
-color diff-chunk  black   white
+# サブビューを横分割にする
+set vertical-split = false
+
+# main viewの左端にコミットIDを表示する
+set main-view = id date author commit-title:graph=yes,refs=yes
+
+# 差分の前後の表示行数（diff-context)を指定
+set diff-context = 4
+
+# reset hard
+bind status <Ctrl-r> ?git reset --hard HEAD
+
+# reflogをpagerで表示
+bind generic W :!git reflog
+
+# commitハッシュをコピー
+bind generic y @sh -c "echo %(commit) | pbcopy"
+
+# push
+bind main U ?git poh "%(prompt Enter push branch => )" # poh = push origin HEAD:$1
+
+# rebase
+bind main <Ctrl-r> ?git rebase -i %(commit)
+
+# リポジトリのGitHubを表示
+bind generic ^ @hub browse
+
+# 選択したbranchのcompare画面
+bind branch [ @hub compare %(branch)

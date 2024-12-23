@@ -74,7 +74,11 @@ export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/git/bin
+export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:$HOME/Library/Python/3.9/bin
+export PATH=$PATH:$HOME/.local/bin
 export PATH="$CARGO_HOME/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 
 #######################################
 # completion
@@ -127,9 +131,9 @@ fi
 alias v=vim
 alias delete-merged-branches='git branch --merged | egrep -v "(^\*|master|staging|production)" | xargs git branch -d'
 
-if type exa > /dev/null 2>&1; then
-  alias ls='exa --classify --icons -h --reverse'
-  alias ll='exa -al --icons --time-style long-iso'
+if type eza > /dev/null 2>&1; then
+  alias ls='eza --classify --icons -h --reverse'
+  alias ll='eza -al --icons --time-style long-iso'
 else
   alias ll='ls -al'
 fi

@@ -1,4 +1,9 @@
 ---
 BUNDLE_BUILD__MYSQL2: "--with-ldflags=-L/usr/local/opt/openssl/lib"
 BUNDLE_JOBS: "4"
-BUNDLE_FORCE_RUBY_PLATFORM: "ruby"
+BUNDLE_GEM__TEST: "rspec"
+BUNDLE_GEM__CI: "false"
+BUNDLE_GEM__MIT: "false"
+BUNDLE_GEM__COC: "false"
+BUNDLE_GEM__CHANGELOG: "false"
+BUNDLE_GEM__LINTER: "false"

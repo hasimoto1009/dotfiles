@@ -15,6 +15,7 @@
   save      = commit -m
   st        = status
   stashes   = stash list
+  sw        = switch
   tags      = tag
   uncommit  = reset --mixed HEAD~
   unstage   = reset -q HEAD --
@@ -32,23 +33,30 @@
   line-numbers = true
   theme =
 [diff]
+  tool = difftastic
+  external = difft
   colorMoved = default
   indentHeuristic = true
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
 [filter "hawser"]
   clean = git hawser clean %f
   required = true
   smudge = git hawser smudge %f
-[init]
- templatedir = ~/.git-templates/git-secrets
- defaultBranch = main
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 [pull]
   rebase = true
 [push]
   default = simple
 [rebase]
   autostash = true
+  abbreviateCommands = true
+  autosquash = true
 [secrets]
   providers = git secrets --aws-provider
   patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}

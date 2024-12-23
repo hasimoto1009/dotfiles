@@ -6,3 +6,4 @@ Thumbs.db
 tags
 .idea/*
 .projections.json
+.overcommit.yml

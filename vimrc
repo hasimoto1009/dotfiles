@@ -40,14 +40,16 @@ call minpac#add('shmup/vim-sql-syntax')
 call minpac#add('google/vim-jsonnet')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('joker1007/vim-ruby-heredoc-syntax', { 'on_ft': 'ruby' })
+call minpac#add('sunaku/vim-ruby-minitest')
 call minpac#add('matsub/github-actions.vim')
 call minpac#add('yasuhiroki/circleci.vim')
 
 " lsp plugins and asyncomplete
-call minpac#add('prabirshrestha/vim-lsp')
-call minpac#add('mattn/vim-lsp-settings')
 call minpac#add('prabirshrestha/asyncomplete.vim')
 call minpac#add('prabirshrestha/asyncomplete-lsp.vim')
+call minpac#add('prabirshrestha/vim-lsp')
+call minpac#add('mattn/vim-lsp-settings')
+call minpac#add('rhysd/vim-lsp-ale')
 
 " Define user commands for updating/cleaning the plugins.
 " Each of them loads minpac, reloads .vimrc to register the
@@ -62,7 +64,7 @@ filetype indent on
 runtime macros/matchit.vim " 対応するタグに飛ぶ
 syntax enable "色付けをオン
 au BufRead,BufNewFile /etc/nginx/* set ft=nginx
-let g:ruby_path = "" "補完できなくなりますがかなり高速になる
+" let g:ruby_path = "" "補完できなくなりますがかなり高速になる
 
 if has('vim_starting')
     " 挿入モード時に非点滅の縦棒タイプのカーソル
@@ -79,7 +81,7 @@ augroup vimrcEx
 augroup END
 
 autocmd QuickFixCmdPost *grep* cwindow
-autocmd BufWritePre * :%s/\s\+$//ge "保存時に行末の空白を除去する
+" autocmd BufWritePre * :%s/\s\+$//ge "保存時に行末の空白を除去する
 
 set list
 set listchars=tab:»-
@@ -173,6 +175,8 @@ set noequalalways
 
 let g:indentLine_faster = 1
 
+set completefunc=syntaxcomplete#Complete
+
 if executable('rg') "ripgrep
   set grepprg=rg\ --vimgrep
   let g:ctrlp_user_command = ['.git', 'cd %s; rg --files-with-matches ".*"', 'find %s -type f']
@@ -213,12 +217,9 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
-" ale settings
-let g:ale_fixers = { 'ruby': ['rubocop'] }
-let g:ale_fix_on_save = 1
-let g:ale_virtualtext_cursor = 'disabled'
-let g:ale_sign_column_always = 1
-highlight ALEWarning ctermbg=88
+let g:ale_linters = {
+  \   'ruby': ['rubocop'],
+  \ }
 
 " vim-rspec shortcut
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -229,3 +230,13 @@ let g:rspec_command = "!CHECK_ERROR=1 RAILS_ENV=test bundle exec rspec {spec}"
 let g:rspec_runner = "os_x_iterm2"
 
 let g:vimwiki_list = [{'path': '~/src/til/', 'syntax': 'markdown', 'ext': '.md'}]
+
+" https://gist.github.com/pocke/44cc6efcbb5621f1b6f2303ba18adb20
+autocmd BufReadCmd *:[0-9]\+ ++nested call s:edit_with_lnum(expand('<afile>'))
+
+function! s:edit_with_lnum(path_with_lnum) abort
+  let lnum = matchstr(a:path_with_lnum, '\v[0-9]+$')
+  let path = matchstr(a:path_with_lnum, '\v^.+\ze:[0-9]+$')
+  exec 'e' path
+  exec lnum
+endfunction
